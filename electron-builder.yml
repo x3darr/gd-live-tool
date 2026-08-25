@@ -1,0 +1,29 @@
+appId: com.gd.livetool
+productName: gd-live-tool
+directories:
+  buildResources: build
+  output: release
+files:
+  - out/**
+  - resources/**
+asarUnpack:
+  - resources/**
+  - node_modules/sql.js/**
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  shortcutName: 黎明图鉴
+publish:
+  provider: github
+  owner: x3darr
+  repo: gd-live-tool
+  private: true
+electronDownload:
+  mirror: https://npmmirror.com/mirrors/electron/
+npmRebuild: true
